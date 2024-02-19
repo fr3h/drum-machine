@@ -1,0 +1,35 @@
+.drum-pad {
+    background-color: #333;
+    border: none;
+    color: #0f0; // Color verde claro al estilo Matrix
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.4);
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+
+    &:active, &.playing {
+        background-color: #0f0;
+        box-shadow: 0 5px 25px rgba(0, 255, 0, 0.7);
+        color: #000;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    
+    // Esto es para los hijos directos <audio> dentro de .drum-pad
+    audio {
+        display: none;
+    }
+}
+
+.drum-pads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: auto;
+    padding: 1rem;
+}
